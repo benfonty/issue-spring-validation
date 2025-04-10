@@ -17,6 +17,17 @@ public class DemoApplication {
 	@Bean
 	public MethodValidationPostProcessor methodValidationPostProcessor() {
 		return new MethodValidationPostProcessor();
+
+		// replace by the following to apply the workaround
+		/*return new MethodValidationPostProcessor() {
+			@Override
+			public boolean isEligible(Object bean, String beanName) {
+				if (bean.getClass().isRecord()) {
+					return false;
+				}
+				return super.isEligible(bean, beanName);
+			}
+		};*/
 	}
 
 }

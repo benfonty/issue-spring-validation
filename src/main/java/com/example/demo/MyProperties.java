@@ -8,5 +8,4 @@ import jakarta.validation.constraints.NotBlank;
 @ConfigurationProperties(prefix = "myapp")
 @Validated
 public record MyProperties(@NotBlank String property) {
-    ;
 }
